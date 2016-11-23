@@ -1,28 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Hello World!</title>
-    </head>
-    <body>
-        <img src="http://tech.osteel.me/images/2015/12/18/docker-tutorial2.gif" alt="Hello World!" />
-        <?php
-        $database   = $user = $password = "project";
-        $host       = "mysql";
-        $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
-        $query      = $connection->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_TYPE='BASE TABLE'");
-        $tables     = $query->fetchAll(PDO::FETCH_COLUMN);
-
-        if (empty($tables)) {
-            echo "<p>There are no tables in database \"{$database}\".</p>";
-        } else {
-            echo "<p>Database \"{$database}\" has the following tables:</p>";
-            echo "<ul>";
-            foreach ($tables as $table) {
-                echo "<li>{$table}</li>";
-            }
-            echo "</ul>";
-        }
-        ?>
-    </body>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="microcms.css" rel="stylesheet" />
+    <title>MicroCMS - Home</title>
+</head>
+<body>
+    <header>
+        <h1>MicroCMS</h1>
+    </header>
+    <?php
+    $bdd = new PDO('mysql:host=172.17.0.5;dbname=microcms;charset=utf8', 'root', 'secret');
+    $articles = $bdd->query('select * from t_article order by art_id desc');
+    foreach ($articles as $article): ?>
+    <article>
+        <h2><?php echo $article['art_title'] ?></h2>
+        <p><?php echo $article['art_content'] ?></p>
+    </article>
+    <?php endforeach ?>
+    <footer class="footer">
+        <a href="https://github.com/bpesquet/OC-MicroCMS">MicroCMS</a> is a minimalistic CMS built as a showcase for modern PHP development.
+    </footer>
+</body>
 </html>
