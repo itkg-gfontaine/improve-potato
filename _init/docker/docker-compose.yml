@@ -18,7 +18,7 @@ php:
 app:
     image: php:7.0-fpm
     volumes:
-        - ..:/var/www/html
+        - ../..:/var/www/improve-potato
     command: "true"
 
 mysql:
