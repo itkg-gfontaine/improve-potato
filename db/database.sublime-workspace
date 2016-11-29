@@ -1,0 +1,265 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"commet",
+				"commentFormView"
+			],
+			[
+				"Form",
+				"FormBuilderInterface"
+			],
+			[
+				"Do",
+				"Domain"
+			],
+			[
+				"u",
+				"user"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 92.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Add Repository"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/gfontaine/Documents/Projets/improve-potato/db/content.sql",
+		"/home/gfontaine/Documents/Projets/improve-potato/views/layout.html.twig",
+		"/home/gfontaine/Documents/Projets/improve-potato/db/structure.sql",
+		"/home/gfontaine/Documents/Projets/improve-potato/composer.json",
+		"/home/gfontaine/Documents/Projets/improve-potato/src/Domain/Comment.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/src/DAO/UserDAO.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/app/config/prod.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/src/DAO/CommentDAO.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/app/app.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/app/routes.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/views/login.html.twig",
+		"/home/gfontaine/Documents/Projets/improve-potato/views/article.html.twig",
+		"/home/gfontaine/Documents/Projets/improve-potato/src/model.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/src/DAO/DAO.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/src/Domain/User.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/web/css/microcms.css",
+		"/home/gfontaine/Documents/Projets/improve-potato/views/index.html.twig",
+		"/home/gfontaine/Documents/Projets/improve-potato/src/DAO/ArticleDAO.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/views/view.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/web/index.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/web/id",
+		"/home/gfontaine/Documents/Projets/improve-potato/app/config/dev.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/web/dev.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/_init/docker/docker-compose.yml",
+		"/home/gfontaine/Documents/Projets/improve-potato/src/Domain/Article.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/web/.htaccess",
+		"/home/gfontaine/Documents/Projets/improve-potato/_init/docker/nginx/default.conf",
+		"/home/gfontaine/Documents/Projets/improve-potato/_init/docker/nginx/Dockerfile",
+		"/home/gfontaine/Documents/Projets/improve-potato/LICENSE",
+		"/home/gfontaine/Documents/Projets/improve-potato/model.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/index.php",
+		"/home/gfontaine/Documents/Projets/psa-dspp/_init/docker/docker-compose.yml",
+		"/home/gfontaine/.bashrc",
+		"/home/gfontaine/Documents/Projets/improve-potato/_init/docker/php/Dockerfile",
+		"/home/gfontaine/Documents/Projets/psa-dspp/_init/docker/apache-php/run.sh",
+		"/home/gfontaine/Documents/Projets/psa-dspp/_init/docker/apache-php/Dockerfile",
+		"/home/gfontaine/bin/launchDocker",
+		"/home/gfontaine/.bashsrc",
+		"/home/gfontaine/Documents/Projets/improve-potato/.gitignore",
+		"/home/gfontaine/Documents/Projets/improve-potato/view.html",
+		"/home/gfontaine/Documents/Projets/improve-potato/microcms.css",
+		"/home/gfontaine/Documents/Projets/improve-potato/vendor/silex/silex/bin/skeleton/index.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/docker/docker-compose.yml",
+		"/home/gfontaine/Documents/Projets/improve-potato/SQL/sprint1/03_sql_insertContent.sql",
+		"/home/gfontaine/Documents/Projets/improve-potato/SQL/sprint1/02_create_structure.sql",
+		"/home/gfontaine/Documents/Projets/improve-potato/SQL/sprint1/01_create_db.sql",
+		"/home/gfontaine/Documents/Projets/improve-potato/docker/php/Dockerfile",
+		"/home/gfontaine/Documents/Projets/improve-potato/docker-tutorial/php/Dockerfile",
+		"/home/gfontaine/Documents/Projets/improve-potato/docker-tutorial/index.php",
+		"/home/gfontaine/Documents/Projets/improve-potato/docker-tutorial/docker-compose.yml",
+		"/home/gfontaine/Documents/Projets/improve-potato/docker-tutorial/nginx/Dockerfile",
+		"/home/gfontaine/Documents/Projets/improve-potato/docker-tutorial/nginx/default.conf",
+		"/home/gfontaine/banan.php"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			" $",
+			"$app->register();",
+			"userDAO",
+			"setUserDAO",
+			",\n",
+			"\";\n",
+			"Article",
+			"\n\t\t",
+			"();",
+			"psadspp",
+			"_dspp",
+			" ",
+			"banana",
+			"oaizuhdoiazhdoiazd\n",
+			"\n",
+			"192.168.10.11",
+			"\n\t",
+			"\t\n",
+			"location = /favicon.ico { access_log off; log_not_found off; }"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Comment",
+			"project",
+			"_improvepotato",
+			"172.17.0.1"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "database.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 157.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
