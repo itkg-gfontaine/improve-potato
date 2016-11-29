@@ -4,67 +4,78 @@ namespace MicroCMS\DAO;
 
 use MicroCMS\Domain\Comment;
 
-class CommentDAO extends DAO{
-	/**
-	 * @var \MicroCMS\DAO\ArticleDAO
-	 */
-	private $articleDAO;
+class CommentDAO extends DAO 
+{
+    /**
+     * @var \MicroCMS\DAO\ArticleDAO
+     */
+    private $articleDAO;
 
-	public function setArticleDAO( ArticleDAO $articleDAO){
-		$this->articleDAO = $articleDAO;
-	}
+    /**
+     * @var \MicroCMS\DAO\UserDAO
+     */
+    private $userDAO;
 
-	/**
-	 * Return a list of all comments for an article, sorted by date (most recent last).
-	 *
-	 * @param integer $articleId The article id.
-	 * 
-	 * @return array A list of all comments for the article.
-	 */
-	public function findAllByArticle($articleId) {
-		// the associated article is retrieved only once
-		$article = $this->articleDAO->find($articleId);
+    public function setArticleDAO(ArticleDAO $articleDAO) {
+        $this->articleDAO = $articleDAO;
+    }
 
-		// art_id is not selected by the SQL query
-		// The article won't be retrieved during domain object construction
-		$sql = "SELECT com_id, com_content, com_author FROM t_comment WHERE art_id=? ORDER BY com_id";
-		$result = $this->getDb()->fetchAll($sql, array($articleId));
-		 
-		//convert query result to an array of domain objects
-		$comments = array();
-		foreach($result as $row){
-			$comId = $row['com_id'];
+    public function setUserDAO(UserDAO $userDAO) {
+        $this->userDAO = $userDAO;
+    }
 
+    /**
+     * Return a list of all comments for an article, sorted by date (most recent last).
+     *
+     * @param integer $articleId The article id.
+     *
+     * @return array A list of all comments for the article.
+     */
+    public function findAllByArticle($articleId) {
+        // The associated article is retrieved only once
+        $article = $this->articleDAO->find($articleId);
 
-			$comment = $this->buildDomainObject($row);
+        // art_id is not selected by the SQL query
+        // The article won't be retrieved during domain objet construction
+        $sql = "select com_id, com_content, usr_id from t_comment where art_id=? order by com_id";
+        $result = $this->getDb()->fetchAll($sql, array($articleId));
 
-			//the associated article is defined for the contructed comment
-			$comment->setArticle($article);
-			$comments[$comId] = $comment;
-		}
+        // Convert query result to an array of domain objects
+        $comments = array();
+        foreach ($result as $row) {
+            $comId = $row['com_id'];
+            $comment = $this->buildDomainObject($row);
+            // The associated article is defined for the constructed comment
+            $comment->setArticle($article);
+            $comments[$comId] = $comment;
+        }
+        return $comments;
+    }
 
-		return $comments;
-	}
+    /**
+     * Creates an Comment object based on a DB row.
+     *
+     * @param array $row The DB row containing Comment data.
+     * @return \MicroCMS\Domain\Comment
+     */
+    protected function buildDomainObject($row) {
+        $comment = new Comment();
+        $comment->setId($row['com_id']);
+        $comment->setContent($row['com_content']);
 
-	/**
-	 * Creates an Comment object based on a DB row
-	 *
-	 * @params array $row The DB row containing Comment data
-	 * @return \MicroCMS\Domain\Comment
-	 */
-	protected function buildDomainObject($row){
-		$comment = new Comment();
-		$comment->setId($row['com_id']);
-		$comment->setContent($row['com_content']);
-		$comment->setAuthor($row['com_author']);
-		if (array_key_exists('art_id', $row)) {
-			// find and set the associated article
-			$articleId = $row['art_id'];
-			$article = $this->articleDAO->find($articleId);
-			$comment->setArticle($article);
-		}
-
-		return $comment;
-	}
-
+        if (array_key_exists('art_id', $row)) {
+            // Find and set the associated article
+            $articleId = $row['art_id'];
+            $article = $this->articleDAO->find($articleId);
+            $comment->setArticle($article);
+        }
+        if (array_key_exists('usr_id', $row)) {
+            // Find and set the associated author
+            $userId = $row['usr_id'];
+            $user = $this->userDAO->find($userId);
+            $comment->setAuthor($user);
+        }
+        
+        return $comment;
+    }
 }
